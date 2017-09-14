@@ -112,8 +112,6 @@ module Test
           add_load_path(expanded_path.dirname) do
             begin
               require(path.basename.to_s)
-            rescue LoadError
-              @require_failed_infos << {:path => expanded_path, :exception => $!}
             end
             add_test_cases(test_suites, find_test_cases(already_gathered))
           end
